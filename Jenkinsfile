@@ -11,12 +11,12 @@ pipeline {
             }
         }        
         stage('Testes') {
-            steps {
+            //steps {
                 // Passo para executar os testes de unidade
                 //sh 'dotnet test --logger:trx'
                 // Publicar resultados dos testes para o Jenkins
                 //junit '**/TestResult.xml'
-            }
+            //}
         }
         
         stage('Construir Imagem Docker') {
@@ -29,10 +29,10 @@ pipeline {
         }
         
         stage('Implantação') {
-            steps {
+            //steps {
                 // Subir a aplicação utilizando Docker Compose
-                sh 'docker-compose up -d'
-            }
+                //sh 'docker-compose up -d'
+            //}
         }
     }
     
