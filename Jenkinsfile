@@ -9,7 +9,7 @@ pipeline {
                 echo 'Pipeline executada com sucesso!'
             }
         }
- ''     
+        
         stage('Testes') {
             steps {
                 // Passo para executar os testes de unidade
