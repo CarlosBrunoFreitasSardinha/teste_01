@@ -34,8 +34,9 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
+    }
     
-    post {
+        post {
             success {
                 // Ações a serem executadas em caso de sucesso (opcional)
                 echo 'Pipeline executada com sucesso!'
@@ -45,5 +46,4 @@ pipeline {
                 echo 'A pipeline falhou!'
             }
         }
-    }
 }
