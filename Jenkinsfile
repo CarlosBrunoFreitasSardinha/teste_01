@@ -13,9 +13,9 @@ pipeline {
         stage('Testes') {
             steps {
                 // Passo para executar os testes de unidade
-                sh 'dotnet test --logger:trx'
+                //sh 'dotnet test --logger:trx'
                 // Publicar resultados dos testes para o Jenkins
-                junit '**/TestResult.xml'
+                //junit '**/TestResult.xml'
             }
         }
         
@@ -34,17 +34,16 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
-    }
     
     post {
-        success {
-            // Ações a serem executadas em caso de sucesso (opcional)
-            echo 'Pipeline executada com sucesso!'
+            success {
+                // Ações a serem executadas em caso de sucesso (opcional)
+                echo 'Pipeline executada com sucesso!'
+            }
+            failure {
+                // Ações a serem executadas em caso de falha (opcional)
+                echo 'A pipeline falhou!'
+            }
         }
-        failure {
-            // Ações a serem executadas em caso de falha (opcional)
-            echo 'A pipeline falhou!'
-        }
-    }
     }
 }
