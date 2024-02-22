@@ -1,0 +1,17 @@
+# Use uma imagem base adequada, por exemplo:
+FROM python:3.9
+
+# Defina o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copie o conteúdo do diretório local (onde está seu código) para o diretório de trabalho no contêiner
+COPY . /app
+
+# Instale as dependências do seu aplicativo, se necessário
+# RUN pip install -r requirements.txt
+
+# Exponha a porta que o aplicativo será executado (se aplicável)
+# EXPOSE 8000
+
+# Comando para executar o aplicativo
+# CMD ["python", "app.py"]
