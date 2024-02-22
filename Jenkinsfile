@@ -39,15 +39,4 @@ pipeline {
             }
         }
     }
-    
-        post {
-            success {
-                // Ações a serem executadas em caso de sucesso (opcional)
-                echo 'Pipeline executada com sucesso!'
-            }
-            failure {
-                // Ações a serem executadas em caso de falha (opcional)
-                echo 'A pipeline falhou!'
-            }
-        }
 }
