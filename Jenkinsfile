@@ -24,9 +24,9 @@ pipeline {
             steps {
                 echo 'TESTES executados com sucesso!   ---- '
                 // Construir a imagem Docker da aplicação
-                script{
-                        dockerapp = dpcker.build("CarlosBrunoFreitasSardinha/teste_01", '-f ./src/DockerFile ./src')
-                        }
+                //script{
+                        //dockerapp = dpcker.build("CarlosBrunoFreitasSardinha/teste_01", '-f ./src/DockerFile ./src')
+                        //}
             }
         }
         
@@ -39,4 +39,15 @@ pipeline {
             }
         }
     }
+    
+        post {
+            success {
+                // Ações a serem executadas em caso de sucesso (opcional)
+                echo 'Pipeline executada com sucesso!'
+            }
+            failure {
+                // Ações a serem executadas em caso de falha (opcional)
+                echo 'A pipeline falhou!'
+            }
+        }
 }
