@@ -6,21 +6,23 @@ pipeline {
             steps {
                 // Passo para obter o código-fonte do repositório Git
                 //git branch: 'teste', url: 'https://github.com/CarlosBrunoFreitasSardinha/teste_01.git'
-                echo 'Pipeline executada com sucesso!   ---- TESTE'
+                echo 'CHECKOUT executada com sucesso!   ---- TESTE'
 
             }
         }        
         stage('Testes') {
-            //steps {
+            steps {
+                echo 'TESTES executados com sucesso!   ---- '
                 // Passo para executar os testes de unidade
                 //sh 'dotnet test --logger:trx'
                 // Publicar resultados dos testes para o Jenkins
                 //junit '**/TestResult.xml'
-            //}
+            }
         }
         
         stage('Construir Imagem Docker') {
             steps {
+                echo 'TESTES executados com sucesso!   ---- '
                 // Construir a imagem Docker da aplicação
                 script{
                         dockerapp = dpcker.build("CarlosBrunoFreitasSardinha/teste_01", '-f ./src/DockerFile ./src')
@@ -29,10 +31,12 @@ pipeline {
         }
         
         stage('Implantação') {
-            //steps {
+            steps {
                 // Subir a aplicação utilizando Docker Compose
                 //sh 'docker-compose up -d'
-            //}
+                
+                echo 'IMPLANTAÇÃO executados com sucesso!   ----'
+            }
         }
     }
     
