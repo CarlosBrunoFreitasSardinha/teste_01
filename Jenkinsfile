@@ -24,9 +24,9 @@ pipeline {
             steps {
                 echo 'CONSTRUÇÃO DA IMAGEM DOCKER iniciada...   ---- '
                 // Construir a imagem Docker da aplicação
-                script{
-                        dockerapp = docker.build("CarlosBrunoFreitasSardinha/teste_01:${env.BUILD_ID}", '-f src/Dockerfile .')
-                }
+                // script{
+                //         dockerapp = docker.build("CarlosBrunoFreitasSardinha/teste_01:${env.BUILD_ID}", '-f src/Dockerfile .')
+                // }
             }
         }
         
